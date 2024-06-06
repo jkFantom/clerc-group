@@ -1,0 +1,22 @@
+-
+  var nav = [
+    'Бизнес',
+    'О нас',
+    'Цены',
+    'Оформить заказ',
+  ]
+
+.mobile-layer(aria-hidden)
+  header.mobile-layer__header
+    .logo
+      a(href='#').logo__link
+        img.logo__img(src='./images/logo.webp', alt='#', width='245', height='21')
+
+    button.control-button(data-close-mobile-nav='', aria-label='Закрыть меню')
+      svg.icon.control-button__icon
+        use(xlink:href='#cross-icon')
+
+  .mobile-layer__body
+    nav.mobile-nav
+      each item in nav
+        a.mobile-nav__link(href='#')= item

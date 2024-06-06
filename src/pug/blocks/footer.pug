@@ -1,0 +1,50 @@
+-
+  var payments = [
+    {
+      icon: 'qiwi-20x20',
+      text: 'QIWI wallet',
+    },
+    {
+      icon: 'yandex-money-20x20',
+      text: 'Yandex Money',
+    },
+    {
+      icon: 'web-money-20x20',
+      text: 'Web Money',
+    }
+  ];
+
+  var links = [
+    {
+      icon: 'mail-20x20',
+      text: 'info@ipsum228.com',
+      mail: true,
+    },
+    {
+      icon: 'vk-20x20',
+      text: 'Мы вконтакте',
+    },
+  ]
+
+footer.footer
+  .footer__inner.container
+    .copyright © 2018 «LOREMIPSUM.NET» Все права защищены.
+
+    .footer__group
+      .resources
+        each resource in payments
+          .resource
+            img.resource__icon(src=`./images/${resource.icon}.svg`, alt='#')
+            .resource__text= resource.text
+
+      .resources
+        each resource in links
+          if resource.mail
+            .resource
+              img.resource__icon(src=`./images/${resource.icon}.svg`, alt='#')
+              a.resource__link(href=`mailto:${resource.text}`, target='_blank')= resource.text
+
+          else
+            .resource
+              img.resource__icon(src=`./images/${resource.icon}.svg`, alt='#')
+              a.resource__link(href='#', target='_blank')= resource.text

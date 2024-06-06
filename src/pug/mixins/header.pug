@@ -1,0 +1,22 @@
+-
+  var nav = [
+    'Бизнес',
+    'О нас',
+    'Цены',
+    'Оформить заказ',
+  ]
+
+mixin header(options)
+  header.header
+    .header__inner.container
+      .logo
+        a(href='#').logo__link
+          img(src='./images/logo.webp', alt='#', width='245', height='21').logo__img
+
+      nav.nav
+        each link in nav
+          a.nav__link(href='#')= link
+
+      button.control-button(data-mobile-nav='', aria-label='Открыть меню')
+        svg.icon.control-button__icon
+          use(xlink:href='#menu-icon')

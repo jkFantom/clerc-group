@@ -1,0 +1,58 @@
+// General Project Styles
+@import 'common/normalize';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'common/fonts';
+@import 'common/typography';
+@import 'common/icons';
+@import 'common/buttons';
+@import 'common/fields-grid';
+
+@import 'blocks/header';
+@import 'blocks/intro';
+
+@import 'blocks/section';
+@import 'blocks/steps';
+
+@import 'blocks/footer';
+
+@import 'blocks/mobile-layer';
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+html {
+  @include font;
+
+  box-sizing: border-box;
+  background: $dark-blue-900;
+  color: #fff;
+}
+
+.container {
+  @include container;
+}
+
+.main {
+  padding: 70px 0 100px 0;
+  background: url('./../images/map.webp') no-repeat 50% 0;
+
+  @media (min-width: $screen-sm) {
+    padding: 80px 0 110px 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 120px 0 150px 0;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+

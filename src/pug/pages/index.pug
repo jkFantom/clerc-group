@@ -1,0 +1,24 @@
+extends ../layouts/layout
+
+block head
+  +head()
+
+block header
+  +header({})
+
+block content
+  +intro({
+    title: `
+      <span class="lead">Lorem ipsum</span>
+      dolor sit ametconsectetur
+      <span class="lead">adipiscing</span>`,
+  })
+
+  main.main
+    .container
+      include ../blocks/order
+
+block footer
+  include ../blocks/footer
+
+  include ../blocks/mobile-layer

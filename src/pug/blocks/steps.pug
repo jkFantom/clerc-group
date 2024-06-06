@@ -1,0 +1,30 @@
+-
+  var steps = [
+    {
+      icon: 'search-55x55',
+      title: 'Lorem ipsum dolor sit amet',
+    },
+    {
+      icon: 'percent-55x55',
+      title: 'Сonsecteturadipiscing elit',
+    },
+    {
+      icon: 'file-55x55',
+      title: 'Sed do eiusmod tempor',
+    },
+    {
+      icon: 'message-55x55',
+      title: 'Esse cillum dolore eu fugiat',
+    },
+    {
+      icon: 'money-55x55',
+      title: 'Excepteur sint occaecat cupidatat non proident',
+    },
+  ]
+
+.steps
+  each step in steps
+    .step
+      .step__icon
+        img(src=`./images/${step.icon}.svg`, alt='#', height='55', width='55').step__img
+      p.step__title= step.title

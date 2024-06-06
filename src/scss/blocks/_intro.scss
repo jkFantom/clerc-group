@@ -1,0 +1,99 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+/* intro */
+.intro {
+  background:  url('./../images/intro-bg.webp') no-repeat 50% 0;
+  background-size: cover;
+  color: #000;
+}
+
+.intro__layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 710px;
+  width: 100%;
+  padding-top: 145px;
+  padding-bottom: 70px;
+
+  @media (min-width: $screen-sm) {
+    padding-top: 130px;
+    aspect-ratio: 1.415;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 130px;
+  }
+}
+
+.intro__body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @media (min-width: $screen-sm) {
+    max-width: 800px;
+    gap: 70px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 80px;
+  }
+}
+
+.intro__title {
+  margin: 0;
+}
+
+.intro__buttons {
+  display: flex;
+  gap: 20px 30px;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: $screen-xxs) {
+    flex-direction: initial;
+  }
+}
+
+.intro__button {
+  margin-top: 26px;
+}
+.intro__list {
+  @media (min-width: $screen-sm) {
+    margin-top: 10px;
+  }
+}
+/* !intro */
+
+/* list */
+.list__title {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.list__item {
+  position: relative;
+  padding-left: 26px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    border-top: 2px solid;
+    top: 10px;
+    left: 10px;
+  }
+}
+/* !list */

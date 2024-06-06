@@ -1,0 +1,77 @@
+-
+  var options = [
+    {
+      text: 'Sed ut perspiciatis',
+      value: 'value1',
+    },
+    {
+      text: 'Nemo enim ipsam',
+      value: 'value2',
+    },
+    {
+      text: 'Et harum quidem',
+      value: 'value3',
+    },
+    {
+      text: 'Temporibus autem',
+      value: 'value4',
+    },
+    {
+      text: 'Itaque earum rerum',
+      value: 'value5',
+    },
+    {
+      text: 'Sed ut perspiciatis',
+      value: 'value6',
+    },
+    {
+      text: 'Nemo enim ipsam',
+      value: 'value7',
+    },
+    {
+      text: 'Et harum quidem',
+      value: 'value8',
+    },
+    {
+      text: 'Temporibus autem',
+      value: 'value9',
+    },
+    {
+      text: 'Itaque earum rerum',
+      value: 'value10',
+    },
+  ]
+
+form.form-component(action='' method='')
+  .form-component__fields.fields-grid
+    .field
+      .dropdown
+        button.dropdown__button(type='button') Выберите тип системы
+        .dropdown__body
+          ul.dropdown__list
+            each option in options
+              li.dropdown__list-item(data-value=`${option.value}`)= option.text
+          input.dropdown__input-hidden(type='text' name='select-category' value='')
+
+    .field
+      input.input(type='text', placeholder='Ваш e-mail', name='email')
+
+    .field
+      input.input(type='text', placeholder='Ваше имя', name='name')
+
+    .field.field_span-2
+      .field__header
+        span.field__label Sed ut perspiciatis, unde omnis iste natus
+        span.field__value 0 %
+      input.range(type='range', value='75', min='0', max='100', name='range', aria-label="range")
+
+    .field
+      label.input-file
+        input.input-file__input(type='file', name='file-upload')
+
+        span.input-file__body
+          svg.icon.input-file__icon
+            use(xlink:href='#file-icon')
+          span.input-file__name Прикрепить файл
+
+  button.form-component__button.button.button_md(type='submit') Отправить

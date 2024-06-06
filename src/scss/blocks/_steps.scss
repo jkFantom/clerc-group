@@ -1,0 +1,108 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+/* steps */
+
+.steps {
+  --gap: 30px;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $screen-xs) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+    gap: var(--gap);
+  }
+}
+
+.step {
+  --circle-size: 80px;
+  --spacing: 15px;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  font-size: 16px;
+
+  &:not(:last-child) {
+    padding-bottom: var(--gap);
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+
+    left: calc(var(--circle-size) / 2);
+    bottom: 6px;
+    top: calc(var(--circle-size) + 6px);
+    border-left: 1px solid $grey-400;
+  }
+
+  @media (min-width: $screen-xs) {
+    align-items: center;
+    flex-direction: column;
+    padding: 0 10px;
+
+    &:not(:last-child) {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child)::after {
+      bottom: initial;
+      top: calc(var(--circle-size) / 2);
+      left: calc(50% + calc(var(--circle-size) / 2 + var(--spacing)));
+      height: auto;
+      width: calc(100% - var(--circle-size) - calc(var(--spacing) * 2) + var(--gap));
+      border-top: 1px solid $grey-400;
+      border-left: none;
+    }
+  }
+
+  @media (min-width: $screen-xl) {
+    --circle-size: 100px;
+
+    &:not(:last-child)::after {
+      height: 6px;
+      border: none;
+      background-image: url('./../images/dots.svg');
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.step__icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--circle-size);
+  aspect-ratio: 1;
+  border: 5px solid $blue-500;
+  border-radius: 50%;
+  background: $blue-200;
+}
+
+.step__img {
+  flex: none;
+  width: 45px;
+
+  @media (min-width: $screen-xl) {
+    width: 55px;
+  }
+}
+
+.step__title {
+  margin: auto 0;
+
+  @media (min-width: $screen-xs) {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+/* !steps */
