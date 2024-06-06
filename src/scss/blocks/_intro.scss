@@ -11,18 +11,18 @@
 .intro__layout {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 710px;
   width: 100%;
   padding-top: 145px;
   padding-bottom: 70px;
 
   @media (min-width: $screen-sm) {
-    padding-top: 130px;
-    aspect-ratio: 1.415;
+    padding-top: 180px;
+    padding-bottom: 100px;
   }
 
   @media (min-width: $screen-xl) {
+    min-height: 850px;
+    padding-top: 202px;
     padding-bottom: 130px;
   }
 }
